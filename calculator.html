@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            margin-top: 100px;
+            background-color: black;
+        }
+        .container{
+            margin-top: 200px;
+            width: 300px;
+            margin: auto;
+            border: 8px solid whitesmoke;
+            box-sizing: border-box;
+            height: 334px;
+        }
+        #display{
+            box-sizing: border-box;
+            padding: 10px 10px;
+            font-size: 2em;
+            height: 70px;
+            color: white;
+        }
+        .input{
+            display: block;
+            margin: auto;
+            float: left;
+            border: 1px solid black;
+            height: 50px;
+            width: 25%;
+            font-size: large;
+            background-color: rgb(214, 213, 213);
+        }
+        #operator{
+            background-color: royalblue;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="display"> </div>
+        <button class="input" id="operator" data-value="AC">AC</button>
+        <button class="input" id="operator" data-value="+/-">+/-</button> 
+        <button class="input" id="operator" data-value="%">%</button>
+        <button class="input" id="operator" data-value="/">/</button>
+        <button class="input" id="number"   data-value="7">7</button>
+        <button class="input" id="number"   data-value="8">8</button> 
+        <button class="input"  id="number"  data-value="9">9</button>
+        <button class="input" id="operator" data-value="*">*</button>
+        <button class="input" id="number"   data-value="4">4</button>  
+        <button class="input" id="number"   data-value="5">5</button> 
+        <button class="input" id="number"   data-value="6">6</button> 
+        <button class="input" id="operator" data-value="-">-</button>
+        <button class="input" id="number"   data-value="1">1</button> 
+        <button class="input" id="number"   data-value="2">2</button> 
+        <button class="input" id="number"   data-value="3">3</button>
+        <button class="input" id="operator" data-value="+">+</button>        
+        <button class="input" style="width: 50%;" data-value="0">0</button> 
+        <button class="input"  data-value=".">.</button>
+        <button class="input" id="operator" data-value="=">=</button>  
+        
+    </div>
+
+
+
+    <script>
+        let display = document.getElementById('display');
+        let operant2,operant1;
+        let operator;
+        const input=$(".input");
+        for(let i=0;i<input.length;i++){
+            input[i].addEventListener('click',calculate);
+        }
+        function calculate(){
+            let value=this.getAttribute('data-value');
+            if(value=="AC"){
+                display.innerHTML=null;
+
+            }else if(value=="+/-"){
+                    display.innerHTML= display.innerHTML*(-1);
+                
+            }
+            else if(value=="+" || value=="-" || value=="*" || value=="/" || value=="%"){
+                operator=value;
+                operant1=parseFloat(display.innerHTML);
+                display.innerHTML=null;
+
+            }else if(value=="="){
+                operant2=parseFloat(display.innerText);
+
+                if(operator=="+"){
+                    display.innerText=operant1 + operant2;
+
+                } else if(operator=="-"){
+                    display.innerText=operant1 - operant2;
+
+                }else if(operator=="*"){
+                    display.innerText=operant1 * operant2;
+
+                }else if(operator=="%"){
+                    display.innerHTML=operant1 % operant2;
+                }
+                else{
+                    display.innerText=operant1 / operant2;
+                }
+            }
+
+            else{
+            display.innerText+=value;}
+        }
+    </script>
+   
+</body>
+</html>
