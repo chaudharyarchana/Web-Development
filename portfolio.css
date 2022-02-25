@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    box-sizing: border-box;
+    background-color: black ;
+    background-image: url("/image/bggifgif.gif");
+    color: white;
+    height: 70%;
+    padding: 50px 100px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16pt;
+}
+.navbar{
+    
+    margin-top: 10px;
+}
+.social{
+    float: right;
+}
+nav{
+    float: left;
+    
+}
+nav a{
+    padding:0px 10px;
+    text-decoration: none;
+    font-size: 12pt;
+}
+.social a{
+    color: white;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+.intro{
+   margin: 200px 300px;
+   
+}
+#archana{
+    color: rgb(179, 62, 62);
+}
+#work{
+    margin: 20px 190px;
+
+        transition: all .5s ease;
+        color: #fff;
+        border: 3px solid rgb(255, 255, 255);
+        font-family:'Montserrat', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1;
+        font-size: 17px;
+        background-color : transparent;
+        padding: 10px;
+        outline: none;
+        border-radius: 4px;
+}
+#work:hover ,input[type=submit]:hover{
+        color: #001F3F;
+        background-color: #fff;
+    
+}
+
+nav a{
+    color: white;
+}
+
+.contact{
+    background-color:#18181f;
+    height: 600px;
+    box-sizing: border-box;
+    padding: 20px 400px;
+    font-family:'Raleway', sans-serif ;
+}
+.contact h1{
+    color: rgb(179, 62, 62);
+    font-size: 30pt;
+    margin-left: 200px;
+    font-weight: 1000px;
+}
+form{
+    color: white;
+    padding: 10px 0px;
+}
+input[type=text],input[type=email],textarea{
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    background-color : white;
+    border: 2px solid white;
+}
+input[type=submit]{
+    margin-left: 230px;
+    transition: all .5s ease;
+    color: #fff;
+    border: 3px solid rgb(255, 255, 255);
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    border-radius: 4px;
+}
+
+
+
+
+
+
